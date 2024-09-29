@@ -26,14 +26,16 @@ export default function Homepage() {
                 method: "get",
                 headers: {
                     "Content-Type": "application/json",
-                }
+                },
+                credentials: 'include'
             });
         } else {
             res = await fetch(`${import.meta.env.VITE_BE_URL}/api/v1/movie/bulk?page=${page}&limit=${limit}`, {
                 method: "get",
                 headers: {
                     "Content-Type": "application/json",
-                }
+                },
+                credentials: 'include'
             });
         }
         return await res.json()

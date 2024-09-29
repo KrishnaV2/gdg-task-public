@@ -24,7 +24,8 @@ export default function Movie() {
             method: "get",
             headers: {
                 "Content-Type": "application/json"
-            }
+            },
+            credentials: 'include'
         });
         const dt = await res.json();
         const { data: mv } = dt;
@@ -44,7 +45,8 @@ export default function Movie() {
                 method: "delete",
                 headers: {
                     "Content-Type": "application/json"
-                }
+                },
+                credentials: 'include'
             }).then(res => res.json())
                 .then(data => {
                     console.log(data)
