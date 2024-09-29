@@ -18,6 +18,8 @@ const limiter = rateLimit({
 
 app.use(express.json());
 app.use(cors({
+    origin: "https://gdg-task-public-51r9.vercel.app",
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     credentials: true, // Allow credentials (cookies, authorization headers, etc.)
 }));
 app.options('*', cors())
