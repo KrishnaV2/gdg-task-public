@@ -28,7 +28,7 @@ exports.checkValid = async function (req, res) {
         // console.log("Checking Cookies")
         let token = req.cookies["Authorization"];
         if (!token)
-            return res.status(403).json({ "status": "fail", "message": "Invalid Token, Unauthorized Access" })
+            return res.status(403).json({ "status": "fail", "message": "Token Absent, Unauthorized Access" })
         token = token.split(" ")[1];
         const decoded = jwt.verify(token, process.env.JWT_PASSWORD);
         const user = await User.findById(decoded.id);
