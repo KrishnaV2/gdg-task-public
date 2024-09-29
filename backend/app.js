@@ -18,9 +18,9 @@ const limiter = rateLimit({
 
 app.use(express.json());
 app.use(cors({
-    origin: 'https://gdg-task-public-51r9.vercel.app/', // Change this to your frontend URL
     credentials: true, // Allow credentials (cookies, authorization headers, etc.)
 }));
+app.options('*', cors())
 app.use(cookieParser());
 app.use('/api', limiter)
 // rate limiting here

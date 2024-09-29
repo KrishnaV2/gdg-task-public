@@ -42,7 +42,8 @@ export default function Signup() {
             body: JSON.stringify({
                 username: email,
                 password: pass
-            })
+            }),
+            credentials: 'include'
         });
         return await res.json()
     }
