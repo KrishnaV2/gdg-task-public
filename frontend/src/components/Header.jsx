@@ -6,7 +6,7 @@ export default function Header() {
     const navigate = useNavigate();
     const { setUserLog } = useContext(userLogContext)
     async function logoutUser() {
-        const res = await fetch('/api/v1/user/logout', {
+        const res = await fetch(`${import.meta.env.VITE_BE_URL}/api/v1/user/logout`, {
             method: "post",
             headers: {
                 "Content-Type": "application/json",

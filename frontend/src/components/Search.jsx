@@ -62,7 +62,7 @@ function AddMovieModal() {
             formData.posterUrl = formData.url;
             formData.date = undefined
             formData.url = undefined
-            const response = await fetch('/api/v1/movie', {
+            const response = await fetch(`${import.meta.env.VITE_BE_URL}/api/v1/movie`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

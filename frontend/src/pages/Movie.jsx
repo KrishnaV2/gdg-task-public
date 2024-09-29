@@ -20,7 +20,7 @@ export default function Movie() {
         });
     };
     async function fetchMovie() {
-        const res = await fetch(`/api/v1/movie/${id}`, {
+        const res = await fetch(`${import.meta.env.VITE_BE_URL}/api/v1/movie/${id}`, {
             method: "get",
             headers: {
                 "Content-Type": "application/json"
@@ -40,7 +40,7 @@ export default function Movie() {
     }
     useEffect(() => {
         if (shouldDelete) {
-            fetch(`/api/v1/movie/${id}`, {
+            fetch(`${import.meta.env.VITE_BE_URL}/api/v1/movie/${id}`, {
                 method: "delete",
                 headers: {
                     "Content-Type": "application/json"

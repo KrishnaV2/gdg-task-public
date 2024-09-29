@@ -22,14 +22,14 @@ export default function Homepage() {
     async function getMovies() {
         let res;
         if (filter) {
-            res = await fetch(`/api/v1/movie/bulk?page=${page}&limit=${limit}&filter=${filter}`, {
+            res = await fetch(`${import.meta.env.VITE_BE_URL}/api/v1/movie/bulk?page=${page}&limit=${limit}&filter=${filter}`, {
                 method: "get",
                 headers: {
                     "Content-Type": "application/json",
                 }
             });
         } else {
-            res = await fetch(`/api/v1/movie/bulk?page=${page}&limit=${limit}`, {
+            res = await fetch(`${import.meta.env.VITE_BE_URL}/api/v1/movie/bulk?page=${page}&limit=${limit}`, {
                 method: "get",
                 headers: {
                     "Content-Type": "application/json",

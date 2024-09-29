@@ -14,7 +14,7 @@ const queryClient = new QueryClient()
 function App() {
   const [userLog, setUserLog] = useState(false)
   useEffect(() => {
-    fetch('/api/v1/user/me', {
+    fetch(`${import.meta.env.VITE_BE_URL}/api/v1/user/me`, {
       method: "get",
       headers: {
         "Content-Type": "application/json",

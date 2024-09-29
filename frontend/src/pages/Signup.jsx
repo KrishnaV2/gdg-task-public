@@ -34,7 +34,7 @@ export default function Signup() {
         refetch();
     }
     async function signinUser() {
-        const res = await fetch("/api/v1/user/signup", {
+        const res = await fetch(`${import.meta.env.VITE_BE_URL}/api/v1/user/signup`, {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
