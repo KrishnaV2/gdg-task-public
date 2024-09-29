@@ -48,7 +48,7 @@ export default function Homepage() {
     // if (userLog)
     if (isPending) return <div className="text-4xl">Loading</div>
     if (isSuccess && userLog) {
-        // console.log(data)
+        console.log(data)
         return (
             <div className='bg-slate-900 min-h-screen py-24 text-white'>
                 <div className="py-10">

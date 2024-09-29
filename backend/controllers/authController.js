@@ -55,7 +55,8 @@ exports.signup = async function (req, res) {
         res.cookie("Authorization", `Bearer ${token}`, {
             expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 90),
             httpOnly: true,
-            sameSite: "strict",
+            // sameSite: "strict",
+            secure: true
         })
         user.password = undefined;
         return res.status(201).json({ "status": "success", "data": user })
@@ -79,7 +80,8 @@ exports.signin = async function (req, res) {
         res.cookie("Authorization", `Bearer ${token}`, {
             expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 90),
             httpOnly: true,
-            sameSite: "strict",
+            // sameSite: "strict",
+            secure: true
         })
         return res.status(201).json({ "status": "success", token })
     } catch (err) {
